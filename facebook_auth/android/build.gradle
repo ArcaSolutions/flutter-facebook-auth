@@ -5,6 +5,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 
     dependencies {
@@ -38,5 +39,10 @@ android {
 }
 
 dependencies {
-    implementation 'com.facebook.android:facebook-login:15.0.2'
+    // implementation 'com.facebook.android:facebook-login:16.0.0'
+    implementation ('com.facebook.android:facebook-login') {
+        version {
+            branch 'fix/npe'  
+        }
+    } 
 }
